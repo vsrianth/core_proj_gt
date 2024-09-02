@@ -7,8 +7,9 @@ if(isset($_POST['submit']))
 {
 	$name = $_POST['name'];
 	$mobile = $_POST['mobile'];
+	$email = $_POST['email'];
 
-	$status = mysqli_query($con,"insert into registration1(name,mobile,is_active,created_by,created_date) values ('$name','$mobile',1,1,'$date')");
+	$status = mysqli_query($con,"insert into registration1(name,mobile,email,is_active,created_by,created_date) values ('$name','$mobile','$email',1,1,'$date')");
 	if($status)
 	{
 		$msg = "Inserted Successfully";

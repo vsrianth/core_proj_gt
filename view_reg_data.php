@@ -16,15 +16,19 @@ $data = mysqli_query($con,"select * from registration1");
 <body>
 <table border="2">
 	<thead>
+		<th>Srno</th>
 		<th>Name</th>
 		<th>Mobile</th>
+		<th>Email</th>
 		<th>Status</th>
 	</thead>
 	<tbody>
-		<?php while($d = mysqli_fetch_array($data)) { ?>
+		<?php $i = 1; while($d = mysqli_fetch_array($data)) { ?>
 		<tr>
+		<td><?php echo $i; ?></td>
 		<td><?php echo $d["name"];?></td>
 		<td><?php echo $d["mobile"];?></td>
+		<td><?php echo $d["email"];?></td>
 		<td><?php 
 		if($d["is_active"] == 1)
 		{
@@ -37,7 +41,7 @@ $data = mysqli_query($con,"select * from registration1");
 		?>
 		</td>
 		</tr>
-	<?php } ?>
+	<?php $i++; } ?>
 	</tbody>
 </table>
 </body>
