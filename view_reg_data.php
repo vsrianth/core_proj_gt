@@ -14,13 +14,15 @@ $data = mysqli_query($con,"select * from registration1");
 	<title>Data View</title>
 </head>
 <body>
-<table border="2">
+	<h2>Users Info Report</h2>
+<table border="2" class="table">
 	<thead>
 		<th>Srno</th>
 		<th>Name</th>
 		<th>Mobile</th>
 		<th>Email</th>
 		<th>Status</th>
+		<th>Action</th>
 	</thead>
 	<tbody>
 		<?php $i = 1; while($d = mysqli_fetch_array($data)) { ?>
@@ -40,6 +42,7 @@ $data = mysqli_query($con,"select * from registration1");
 		}
 		?>
 		</td>
+		<td><button><a href="http://localhost/core_proj_gt/edit_reg_data.php/?id=<?php echo $d["reg_id"]; ?>">Edit</button></td>
 		</tr>
 	<?php $i++; } ?>
 	</tbody>
