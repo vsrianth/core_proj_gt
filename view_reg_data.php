@@ -21,6 +21,7 @@ $data = mysqli_query($con,"select * from registration1");
 		<th>Name</th>
 		<th>Mobile</th>
 		<th>Email</th>
+		<th>Registred Date</th>
 		<th>Status</th>
 		<th>Action</th>
 	</thead>
@@ -31,6 +32,7 @@ $data = mysqli_query($con,"select * from registration1");
 		<td><?php echo $d["name"];?></td>
 		<td><?php echo $d["mobile"];?></td>
 		<td><?php echo $d["email"];?></td>
+		<td><?php echo date('Y-m-d',strtotime($d["created_date"]));?></td>
 		<td><?php 
 		if($d["is_active"] == 1)
 		{
